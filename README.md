@@ -1,4 +1,4 @@
-H3>NAME : NIRAUNJANA GAYATHRI G R</H3>
+<H3>NAME : NIRAUNJANA GAYATHRI G R</H3>
 <H3>REGISTER NO : 212222230096</H3>
 <H3>EX. NO.5</H3>
 <H3>DATE:</H3>
@@ -38,10 +38,12 @@ Step 7: Plot the Input space and Hidden space of RBF NN for XOR classification.
 import numpy as np
 import matplotlib.pyplot as plt
 ```
+
 ```
 def gaussian_rbf(x, landmark, gamma=1):
     return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
 ```
+
 ```
 def end_to_end(X1, X2, ys, mu1, mu2):
     from_1 = [gaussian_rbf(np.array([X1[i], X2[i]]), mu1) for i in range(len(X1))]
@@ -85,6 +87,7 @@ def end_to_end(X1, X2, ys, mu1, mu2):
     print(f"Weights: {W}")
     return W
 ```
+
 ```
 def predict_matrix(point, weights):
     gaussian_rbf_0 = gaussian_rbf(point, mu1)
@@ -92,18 +95,21 @@ def predict_matrix(point, weights):
     A = np.array([gaussian_rbf_0, gaussian_rbf_1, 1])
     return np.round(A.dot(weights))
 ```
+
 ```
 # points
 x1 = np.array([0, 0, 1, 1])
 x2 = np.array([0, 1, 0, 1])
 ys = np.array([0, 1, 1, 0])
 ```
+
 ```
 # centers
 mu1 = np.array([0, 1])
 mu2 = np.array([1, 0])
-w = end_to_end(x1, x2, ys, mu1, mu2)
+w = end_to_end(x1, x2, ys, mu1, m
 ```
+
 ```
 # testing
 print(f"Input:{np.array([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}")
